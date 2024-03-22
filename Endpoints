@@ -10,12 +10,12 @@ const http = require('http');
 const hostname = 'localhost';
 const port = 8900;
 
-// Create a server object that listens for incoming requests
+// Create server object that listens for incoming requests
 const server = http.createServer((req, res) => {
   // Extract the request method (like 'GET' or 'POST') and URL
   const { method, url } = req;
 
-  // Check which method was used in the request
+  // Check method used in request
   switch (method) {
     case 'GET':
       if (url === '/books') {
@@ -23,10 +23,10 @@ const server = http.createServer((req, res) => {
         res.setHeader('Content-Type', 'application/json'); // Specify response type as JSON
         res.end(JSON.stringify({ message: 'GET all books' })); // Send the message as JSON
       } else {
-        // If the URL is unknown, respond with 'Not Found'
+        // If URL is not knowwn, respond with 'Not Found'
         res.statusCode = 404; // Set status code to 'Not Found'
         res.setHeader('Content-Type', 'text/plain'); // Specify response type as plain text
-        res.end('Not Found'); // Send the 'Not Found' message
+        res.end('Not Found');
       }
       break;
 
@@ -39,7 +39,7 @@ const server = http.createServer((req, res) => {
         // If the URL is unknown, respond with 'Not Found'
         res.statusCode = 404; // Set status code to 'Not Found'
         res.setHeader('Content-Type', 'text/plain'); // Specify response type as plain text
-        res.end('Not Found'); // Send the 'Not Found' message
+        res.end('Not Found');
       }
       break;
 
